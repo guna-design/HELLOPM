@@ -1,236 +1,166 @@
-/* Bounce Animation */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-30px);
-    }
-    60% {
-      transform: translateY(-15px);
-    }
-  }
-  
-  .bounce {
-    animation: bounce 1s;
-  }
-  
-  /* Pulse Animation */
-  @keyframes pulse {
-    0% {
-      opacity: 0.5;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0.5;
-    }
-  }
-  
-  .pulse {
-    animation: pulse 2s infinite;
-  }
-  
-  /* Fade In Animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .fade-in {
-    animation: fadeIn 1s;
-  }
-  
-  /* Slide In Animation */
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  .slide-in {
-    animation: slideIn 0.5s ease-out;
-  }
-  
-  /* Shake Animation */
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    50% { transform: translateX(10px); }
-    75% { transform: translateX(-10px); }
-    100% { transform: translateX(0); }
-  }
-  
-  .shake {
-    animation: shake 0.5s ease;
-  }
-  
-  /* Chatbot Styles */
-  .bot-wrapper {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-  }
-  
-  .bot-header {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-  }
-  
-  .bot-body {
-    display: none;
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    width: 300px;
-    height: 400px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
-  .bot-body.open {
-    display: block;
-  }
-  
-  .bot-resize-handle {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #007BFF;
-    cursor: se-resize;
-  }
-  /* General Bot Styles */
+/* Container for the entire chatbot */
 .bot-wrapper {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-  }
-  
-  .bot-header {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .bot-character {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-image: url('https://example.com/character-image.png'); /* Replace with your character image URL */
-    background-size: cover;
-    background-position: center;
-    margin-right: 10px;
-  }
-  
-  .bot-body {
-    display: none;
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    width: 300px;
-    height: 400px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
-  .bot-body.open {
-    display: block;
-  }
-  
-  .bot-resize-handle {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #007BFF;
-    cursor: se-resize;
-  }
- 
-.bot-wrapper {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-  }
-  
-  .bot-header {
-    background-color:black;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .bot-character {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-image: url('https://i.pinimg.com/736x/15/34/92/153492d5cc36e23919920d27ab4b08cc.jpg');
-    background-size: cover;
-    background-position: center;
-    margin-right: 10px;
-  }
-  
-  .bot-body {
-    display: none;
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    width: 300px;
-    height: 400px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
-  .bot-body.open {
-    display: block;
-  }
-  
-  .bot-resize-handle {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #007BFF;
-    cursor: se-resize;
-  }
-  
-  /* Add additional animations and styles as needed */
-  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header of the chatbot */
+.bot-header {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  width: 60px; /* Increased width for better spacing */
+  height: 60px; /* Adjusted to match avatar size */
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Active state for the header */
+.bot-header.active {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+/* Avatar in the header */
+.bot-avatar {
+  width: 50px;
+  height: 50px;
+  background-image: url('https://i.pinimg.com/736x/15/34/92/153492d5cc36e23919920d27ab4b08cc.jpg'); /* Updated size */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  transition: transform 0.3s ease;
+}
+
+/* Chat body container */
+.bot-body {
+  display: none;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 350px; /* Adjusted width for better readability */
+  height: 500px; /* Adjusted height for better chat visibility */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Open state for the chat body */
+.bot-body.open {
+  display: block;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+/* Animation for sliding in */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Chat content area */
+.chat-content {
+  padding: 16px;
+  height: calc(100% - 80px); /* Adjusted for input area */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: linear-gradient(to top, #ffffff 50%, #f9f9f9);
+}
+
+/* Individual message styling */
+.message {
+  padding: 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  max-width: 80%; /* Increased width for better readability */
+  word-wrap: break-word;
+  animation: messageFadeIn 0.3s ease;
+}
+
+/* Animation for message fade in */
+@keyframes messageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* User message styling */
+.user-message {
+  background-color: #007bff; /* Matching header color */
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+/* Bot message styling */
+.bot-message {
+  background-color: #f1f1f1;
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+/* Input container styling */
+.input-container {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  padding: 12px;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+/* Input field styling */
+.chat-input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  margin: 0 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus state for input field */
+.chat-input:focus {
+  border-color: #007bff; /* Changed to match header color */
+}
+
+/* Send button styling */
+.send-button {
+  background-color: #b9159e; /* Updated color for visual appeal */
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover state for send button */
+.send-button:hover {
+  background-color: #a8148e; /* Slightly darker shade */
+  transform: scale(1.05);
+}
+
+/* Resize handle styling */
+.resize-handle {
+  width: 24px;
+  height: 24px;
+  background: url('path-to-your-resize-icon.svg') no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: se-resize;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover state for resize handle */
+.resize-handle:hover {
+  opacity: 0.7;
+}

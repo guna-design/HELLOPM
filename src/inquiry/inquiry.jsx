@@ -5,7 +5,7 @@ import './inquiry.css';
 const InquiryBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
-  const [dimensions, setDimensions] = useState({ width: 300, height: 400 });
+  const [dimensions, setDimensions] = useState({ width: 350, height: 500 });
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const botRef = useRef(null);
@@ -13,10 +13,6 @@ const InquiryBot = () => {
 
   const handleToggleOpen = () => {
     setIsOpen(prev => !prev);
-    if (!isOpen) {
-      botHeaderRef.current.classList.add('bounce');
-      setTimeout(() => botHeaderRef.current.classList.remove('bounce'), 1000);
-    }
   };
 
   const handleMouseDown = (e) => {
@@ -49,11 +45,10 @@ const InquiryBot = () => {
     const botResponse = getBotResponse(input);
     setMessages([...messages, userMessage, { text: botResponse, type: 'bot' }]);
     setInput('');
-    speak(botResponse); // Call speak function to voice the bot's response
+    speak(botResponse);
   };
 
   const getBotResponse = (userInput) => {
-    // Replace with your own logic or API call
     const responses = {
       "hi": "Hello! How can I assist you today?",
       "how are you": "I'm just a bot, but I'm doing great! How can I help?",
@@ -66,12 +61,10 @@ const InquiryBot = () => {
   const speak = (text) => {
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.pitch = 1; // Adjust pitch if needed
-      utterance.rate = 1; // Adjust rate if needed
-      utterance.volume = 1; // Adjust volume if needed
+      utterance.pitch = 1;
+      utterance.rate = 1;
+      utterance.volume = 1;
       speechSynthesis.speak(utterance);
-    } else {
-      console.error('Speech synthesis not supported in this browser.');
     }
   };
 
@@ -79,51 +72,48 @@ const InquiryBot = () => {
     <Draggable>
       <div className="bot-wrapper">
         <div 
-          className={`bot-header ${isOpen ? 'fade-in' : ''}`}
+          className={`bot-header ${isOpen ? 'active' : ''}`}
           onClick={handleToggleOpen}
+          aria-label="Toggle Chat"
           ref={botHeaderRef}
         >
-          <div className="bot-character rounded-full" />
-          <span></span>
+          <div className="bot-avatar" />
+          <div className="bot-status"></div>
+          <div className={`bot-indicator ${isOpen ? 'active' : ''}`} />
         </div>
         <div
           ref={botRef}
-          className={`bot-body ${isOpen ? 'open slide-in' : ''}`}
+          className={`bot-body ${isOpen ? 'open' : ''}`}
           style={{ width: `${dimensions.width}px`, height: `${dimensions.height}px` }}
         >
           <div className="chat-content">
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`flex items-start mb-4 ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`message ${msg.type === 'user' ? 'user-message' : 'bot-message'}`}
               >
-                <div
-                  className={`p-3 rounded-lg max-w-xs ${msg.type === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-800'}`}
-                >
-                  {msg.text}
-                </div>
+                {msg.text}
               </div>
             ))}
           </div>
-          <div className="flex mt-4 p-2 border-t border-gray-200">
+          <div className="input-container">
             <input
               type="text"
-              className="flex-1 p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+              className="chat-input"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Type your message..."
+              aria-label="Message Input"
             />
-            <button
-              className="bg-blue-500 text-white p-3 rounded-r-lg hover:bg-blue-600 transition duration-300 ease-in-out"
-              onClick={handleSend}
-            >
+            <button className="send-button" onClick={handleSend} aria-label="Send Message">
               Send
             </button>
           </div>
           <div
-            className="bot-resize-handle"
+            className="resize-handle"
             onMouseDown={handleMouseDown}
+            aria-label="Resize Chat"
           />
         </div>
       </div>
