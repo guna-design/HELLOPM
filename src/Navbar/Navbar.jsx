@@ -96,10 +96,10 @@ const Navbar = () => {
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
             </a>
           </div>
-          <div className="hidden lg:flex lg:flex-1 gap-4 md:gap-6 lg:justify-end">
+          <div className="hidden items-center lg:flex lg:flex-1 gap-4 md:gap-6 lg:justify-end">
             <a
               href="#"
-              className="text-xs md:text-sm lg:text-base font-bold leading-6 text-white hover:text-white"
+              className="text-xs  md:text-sm lg:text-base font-bold leading-6 text-white hover:text-white"
             >
               Sign Up
             </a>
