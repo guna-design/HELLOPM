@@ -11,6 +11,7 @@ import Curriculam from "./assets/Slider/Curriculam";
 
 import AlumniSlider from "./Dashboard/AluminiSlider";
 import AnimiCard from "./Dashboard/AnimiCard";
+import Dashboard from "./Dashboard/Dashboard";
 
 import Pagesection from "./Dashboard/Pagesection";
 import ProgramCard from "./Dashboard/ProgramCard";
@@ -23,6 +24,7 @@ import Navbar from "./Navbar/Navbar";
 function App() {
   return (
     <>
+    <Dashboard/>
       <Navbar />
       <Pagesection />
       <AnimiCard />

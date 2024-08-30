@@ -1,11 +1,9 @@
-import React from 'react';
-// import dashboardImage from '../assets/vecteezy_concept-selling-products-online-check-business-growth_26398627.jpg';
-
+import React from 'react'
 
 const Dashboard = () => {
   return (
-   <>
-    <div className="relative overflow-hidden bg-gradient-to-b from-white to-gray-100 py-14">
+    <>
+     <div className="relative overflow-hidden bg-gradient-to-b from-white to-gray-100 py-14">
     
     <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-2xl sm:-top-80" aria-hidden="true">
       <div
@@ -80,9 +78,8 @@ const Dashboard = () => {
       </div>
     </div>
   </div>
+    </>
+  )
+}
 
-  </>
-  );
-};
-
-export default Dashboard;
+export default Dashboard
