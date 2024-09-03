@@ -84,10 +84,10 @@ const ChoseHello = () => {
         >
           {featuresData.map((feature, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white p-8 rounded-lg shadow-lg dark:bg-gray-800">
+              <div className="bg-white p-8 rounded-lg m-0 shadow-xl  ">
                 <img src={feature.link} alt={feature.title} className="w-full mb-4 rounded-lg" />
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{feature.paragraph}</p>
+                <h3 className="text-lg font-semibold text-gray-800  mb-2">{feature.title}</h3>
+                <p className="text-gray-600 ">{feature.paragraph}</p>
               </div>
             </SwiperSlide>
           ))}

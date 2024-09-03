@@ -125,15 +125,15 @@ const Pagesection = () => {
 
           {/* para card */}
 
-          <div className="text-base md:text-lg lg:text-xl xl:text-2xl pt-20 flex justify-center items-center font-serif font- pb-10">
+          <div className="text-base md:text-lg lg:text-xl xl:text-2xl pt-20 flex justify-center items-center font-serif font- pb-10 ">
             Extensive Career Support
           </div>
 
-          <div className="px-4 sm:px-6 lg:px-8">
-            <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="px-4 sm:px-6 lg:px-8 ">
+            <dl className="card grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
               {/* Card 1  */}
-              <div className="relative p-6 bg-white border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700">
-                <dt className="text-lg font-bold leading-7 text-pink-600 dark:text-pink-400">
+              <div className="relative   p-6 bg-white border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl ">
+                <dt className="text-lg font-bold leading-7 text-pink-600 ">
                   <div className="absolute left-0 top-0 flex h-8 w-8  items-center justify-center rounded-lg bg-pink-600 text-white">
                     {/* Icon for Resume Optimization  */}
                     <svg
@@ -153,15 +153,15 @@ const Pagesection = () => {
                   </div>
                   Resume Optimization
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-400">
+                <dd className="mt-2 text-base leading-7 text-gray-600 ">
                   1:1 Expert resume review and optimization. Showcase the right
                   transferrable skills.
                 </dd>
               </div>
 
               {/* Card 2  */}
-              <div className="relative p-6 bg-white border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700">
-                <dt className="text-lg font-bold leading-7 text-pink-600 dark:text-pink-400">
+              <div className="relative p-6 bg-white border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl ">
+                <dt className="text-lg font-bold leading-7 text-pink-600 ">
                   <div className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-lg bg-pink-600 text-white">
                     {/* Icon for Build Your Portfolio  */}
                     <svg
@@ -181,15 +181,15 @@ const Pagesection = () => {
                   </div>
                   Build Your Portfolio
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-400">
+                <dd className="mt-2 text-base leading-7 text-gray-600 ">
                   Get hands-on assignments and expert help to create a
                   portfolio. Build your own product.
                 </dd>
               </div>
 
               {/* Card 3  */}
-              <div className=" relative p-6 bg-white border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700">
-                <dt className="text-lg font-bold leading-7 text-pink-600 dark:text-pink-400">
+              <div className=" relative p-6 bg-white border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl ">
+                <dt className="text-lg font-bold leading-7 text-pink-600 ">
                   <div className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-lg bg-pink-600 text-white">
                     {/* Icon for Extensive Interview Prep  */}
                     <svg
@@ -209,15 +209,15 @@ const Pagesection = () => {
                   </div>
                   Extensive Interview Prep
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-400">
+                <dd className="mt-2 text-base leading-7 text-gray-600 ">
                   Structured preparation, practice questions, expert guidance,
                   and mock interviews.
                 </dd>
               </div>
 
               {/* Card 4  */}
-              <div className="relative p-6 bg-white border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700">
-                <dt className="text-lg font-bold leading-7 text-pink-600 dark:text-pink-400">
+              <div className="relative p-6 bg-white border border-gray-200 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl ">
+                <dt className="text-lg font-bold leading-7 text-pink-600 ">
                   <div className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-lg bg-pink-600 text-white">
                     {/* Icon for Job Board and Referrals  */}
                     <svg
@@ -237,7 +237,7 @@ const Pagesection = () => {
                   </div>
                   Job Board and Referrals
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-400">
+                <dd className="mt-2 text-base leading-7 text-gray-600 ">
                   Leveraging the alumni, hiring partners, and network for job
                   opportunities.
                 </dd>

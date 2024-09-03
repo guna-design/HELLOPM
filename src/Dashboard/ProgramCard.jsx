@@ -45,12 +45,12 @@ const ProgramCard = () => {
   };
 
   return (
-    <div className="max-w-6xl m-10 mx-auto p-4">
+    <div className="max-w-6xl m-10 mx-auto p-4 bg-white">
       <div className="text-base md:text-lg lg:text-xl xl:text-2xl flex pt-8 pb-8 justify-center items-center font-serif">
         This Program is Best Suited For
       </div>
       <Slider {...settings}>
-        <div className="bg-white shadow-lg rounded-lg p-6 dark:bg-gray-800 max-w-xs mx-auto">
+        <div className="bg-white shadow-lg rounded-lg p-6 dark:bg-white  max-w-xs mx-auto">
           <div className="flex items-center mb-4">
             <a href="https://www.linkedin.com/in/chandan-reddy-k/">
               <img
@@ -66,14 +66,14 @@ const ProgramCard = () => {
               <p className="text-sm text-gray-500">Working Professionals</p>
             </div>
           </div>
-          <p className="text-gray-600 dark:text-gray-300 overflow-x-hidden ">
+          <p className="text-gray-800  overflow-x-hidden ">
             looking to transition into product roles from sales, testing,
             marketing, support, operations, business analysts, software
             development, consulting, program and project management. We have
             ample alumni stories of successful transitions.
           </p>
         </div>
-        <div className="bg-white shadow-lg rounded-lg p-6 dark:bg-gray-800 max-w-xs mx-auto">
+        <div className="bg-white shadow-lg rounded-lg p-6  max-w-xs mx-auto">
           <div className="flex items-center mb-4">
             <a href="https://www.linkedin.com/in/shailesh-prithani-a837b111/">
               <img
@@ -89,14 +89,14 @@ const ProgramCard = () => {
               <p className="text-sm text-gray-500">Entrepreneur</p>
             </div>
           </div>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 ">
             looking to develop a product mindset for their own ventures &
             increases their chances of creating successful products. Get the
             process, mindset and support network for your success. Entrepreneurs
             are often the first product managers in their startups.
           </p>
         </div>
-        <div className="bg-white shadow-lg rounded-lg p-6 dark:bg-gray-800 max-w-xs mx-auto">
+        <div className="bg-white shadow-lg rounded-lg p-6  max-w-xs mx-auto">
           <div className="flex items-center mb-4">
             <a href="https://www.linkedin.com/in/abhishekmishra2014/">
               <img
@@ -112,7 +112,7 @@ const ProgramCard = () => {
               <p className="text-sm text-gray-500">Founder</p>
             </div>
           </div>
-          <p className="text-gray-600 dark:text-gray-300  overflow-y-hidden">
+          <p className="text-gray-600   overflow-y-hidden">
             looking to supercharge their careers with right mentorship, support
             and structured knowledge of product management. Many of our to Sr
             PM, Group PM and Product Leadership roles at companies like

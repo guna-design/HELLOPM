@@ -273,31 +273,31 @@ const Curriculam = () => {
         {featuresData.map((feature, index) => (
           <SwiperSlide key={index}>
             <div
-              className={`scroll-card bg-white p-8 rounded-lg shadow-2xl  m-2 dark:bg-gray-800 transition-all duration-700 ease-in-out max-h-64 overflow-auto scrollbar-hide ${
+              className={`scroll-card bg-white p-8 rounded-lg shadow-2xl  m-2  transition-all duration-700 ease-in-out max-h-64 overflow-auto scrollbar-hide ${
                 activeCards.includes(index.toString()) ? "max-h-[500px]" : ""
               }`}
               data-index={index}
             >
-              <h1 className="font-bold text-xl text-pink-600 dark:text-white mb-2">
+              <h1 className="font-bold text-xl text-pink-600 mb-2">
                 {feature.week}
               </h1>
-              <h4 className="font-bold text-base text-gray-900 dark:text-white mb-2">
+              <h4 className="font-bold text-base text-gray-900  mb-2">
                 {feature.title}
               </h4>
 
               {Array.isArray(feature.list) ? (
-                <ul className="list-disc list-inside font-light text-xs text-gray-600 dark:text-gray-300 mb-4">
+                <ul className="list-disc list-inside font-light text-xs text-gray-600  mb-4">
                   {feature.list.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
               ) : (
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-600  mb-4">
                   {feature.list}
                 </p>
               )}
 
-              <h5 className="text-gray-600 text-sm font-semibold dark:text-gray-300 mb-4">
+              <h5 className="text-gray-600 text-sm font-semibold  mb-4">
                 {feature.header}
               </h5>
               <img src={feature.img} className="w-full mb-4 rounded-lg" />
@@ -308,7 +308,7 @@ const Curriculam = () => {
                   </p>
                 )}
                 {feature.handson && (
-                  <p className="text-white font-light text-xs dark:text-gray-300">
+                  <p className="text-white font-light text-xs ">
                     {feature.handson}
                   </p>
                 )}

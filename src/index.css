@@ -29,7 +29,9 @@
 
 
 
-
+.your-card-class {
+  @apply bg-gray-900 text-pink-300 !important;
+}
 
 
 

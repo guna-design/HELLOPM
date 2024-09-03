@@ -65,12 +65,12 @@ const AnimiCard = () => {
           <button
             key={index}
             type="button"
-            className="focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg inline-flex justify-center w-full text-center p-2"
+            className="focus:ring-4  focus:outline-none focus:ring-blue-200 font-medium rounded-lg inline-flex justify-center w-full text-center p-2"
           >
             <img
               src={src}
               alt={`Slide ${index}`}
-              className="w-full max-w-[80%] md:max-w-[70%] lg:max-w-[60%] xl:max-w-[50%] transition-transform duration-300 hover:scale-110 rounded-md shadow-lg" // Adjust width and scale on hover
+              className="w-full max-w-[80%] bg-white md:max-w-[70%] lg:max-w-[60%] xl:max-w-[50%] transition-transform duration-300 hover:scale-110 rounded-md shadow-lg" // Adjust width and scale on hover
             />
           </button>
         ))}

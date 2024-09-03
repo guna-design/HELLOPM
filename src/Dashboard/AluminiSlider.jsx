@@ -103,7 +103,7 @@ const AlumniSlider = () => {
       <Slider {...settings}>
         {alumniData.map((alumni, index) => (
           <div key={index} className="p-4">
-            <div className="bg-white shadow-lg rounded-lg p-6 dark:bg-gray-800">
+            <div className="bg-white shadow-lg rounded-lg p-6 ">
               <div className="flex items-center mb-4">
                 <img
                   className="w-12 h-12 rounded-full   border-2 border-pink-300 shadow-md object-cover"
@@ -129,7 +129,7 @@ const AlumniSlider = () => {
                   />
                 </a>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className=" text-gray-800 mb-4">
                 {alumni.description}
               </p>
               <a
