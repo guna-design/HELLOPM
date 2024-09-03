@@ -1,10 +1,32 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+import "./Curriculam.css"; 
 
-const Curriculam = () => {
+const Curriculum = () => {
   const swiperRef = useRef(null);
   const [activeCards, setActiveCards] = useState([]);
+  const [expandedCards, setExpandedCards] = useState({});
+  const [selectedCard, setSelectedCard] = useState(null);
+  const cardRefs = useRef([]);
+
+  const toggleExpand = (index) => {
+    setExpandedCards((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
+  };
+
+  const scrollToCard = (index) => {
+    if (cardRefs.current[index]) {
+      cardRefs.current[index].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+      setSelectedCard(index);
+    }
+  };
 
   const featuresData = [
     {
@@ -246,7 +268,7 @@ const Curriculam = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto py-10">
+    <div className="max-w-7xl mx-auto py-10 relative overflow-hidden">
       <h2 className="text-base md:text-lg lg:text-xl xl:text-2xl flex justify-center items-center font-serif">
         Curriculum
       </h2>
@@ -254,6 +276,18 @@ const Curriculam = () => {
         15 weeks of intensive learning in product management and growth. Learn
         the art of building and growing products that your users will love.
       </p>
+
+      <div className="flex flex-wrap justify-center mb-6 gap-2">
+        {featuresData.map((feature, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToCard(index)}
+            className="bg-pink-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-pink-700 transition-all duration-300"
+          >
+            {feature.week}
+          </button>
+        ))}
+      </div>
 
       <Swiper
         spaceBetween={20}
@@ -269,35 +303,35 @@ const Curriculam = () => {
           },
         }}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
+        className="swiper-container"
       >
         {featuresData.map((feature, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="swiper-slide">
             <div
-              className={`scroll-card bg-white p-8 rounded-lg shadow-2xl  m-2  transition-all duration-700 ease-in-out max-h-64 overflow-auto scrollbar-hide ${
-                activeCards.includes(index.toString()) ? "max-h-[500px]" : ""
-              }`}
+              className={`scroll-card bg-white p-8 rounded-lg shadow-2xl m-2 transition-transform duration-500 ease-in-out max-h-64 overflow-auto scrollbar-hide transform ${
+                selectedCard === index ? "scale-110 z-50" : ""
+              } ${expandedCards[index] ? "translate-y-[-50px]" : ""}`}
               data-index={index}
+              ref={(el) => (cardRefs.current[index] = el)}
             >
               <h1 className="font-bold text-xl text-pink-600 mb-2">
                 {feature.week}
               </h1>
-              <h4 className="font-bold text-base text-gray-900  mb-2">
+              <h4 className="font-bold text-base text-gray-900 mb-2">
                 {feature.title}
               </h4>
 
               {Array.isArray(feature.list) ? (
-                <ul className="list-disc list-inside font-light text-xs text-gray-600  mb-4">
+                <ul className="list-disc list-inside font-light text-xs text-gray-600 mb-4">
                   {feature.list.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
               ) : (
-                <p className="text-gray-600  mb-4">
-                  {feature.list}
-                </p>
+                <p className="text-gray-600 mb-4">{feature.list}</p>
               )}
 
-              <h5 className="text-gray-600 text-sm font-semibold  mb-4">
+              <h5 className="text-gray-600 text-sm font-semibold mb-4">
                 {feature.header}
               </h5>
               <img src={feature.img} className="w-full mb-4 rounded-lg" />
@@ -308,11 +342,17 @@ const Curriculam = () => {
                   </p>
                 )}
                 {feature.handson && (
-                  <p className="text-white font-light text-xs ">
+                  <p className="text-white font-light text-xs">
                     {feature.handson}
                   </p>
                 )}
               </div>
+              <button
+                className="mt-4 text-pink-600 font-medium text-sm"
+                onClick={() => toggleExpand(index)}
+              >
+                {expandedCards[index] ? "Read Less" : "Read More"}
+              </button>
             </div>
           </SwiperSlide>
         ))}
@@ -329,4 +369,4 @@ const Curriculam = () => {
   );
 };
 
-export default Curriculam;
+export default Curriculum;

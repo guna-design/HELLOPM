@@ -1,0 +1,119 @@
+/* Basic Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+  }
+  
+  /* Swiper Styles */
+  .swiper-container {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+  .swiper-slide {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Scroll Card Styles */
+  .scroll-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    max-height: 16rem;
+    overflow: hidden;
+  }
+  
+  /* Hover Effect */
+  .scroll-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  /* Selected Card Style */
+  .scroll-card.scale-110 {
+    transform: scale(1.1);
+    z-index: 20;
+  }
+  
+ 
+  /* Card Content */
+  .scroll-card h1 {
+    font-size: 1.25rem;
+    color: #ec4899;
+    margin-bottom: 0.5rem;
+  }
+  
+  .scroll-card h4 {
+    font-size: 1rem;
+    color: #111827;
+    margin-bottom: 0.75rem;
+  }
+  
+  .scroll-card ul {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+  }
+  
+  .scroll-card img {
+    border-radius: 0.75rem;
+  }
+  
+  /* Gradient Background */
+  .bg-gradient-to-r {
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.7), rgba(236, 72, 153, 0.7));
+  }
+  
+  /* Button Styles */
+  button {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  .apply-button {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(90deg, rgba(219, 39, 119, 1), rgba(236, 72, 153, 1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+  }
+  
+  .apply-button:hover {
+    width: 10rem;
+    border-radius: 0.5rem;
+  }
+  
+  .apply-button span {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .apply-button:hover span {
+    opacity: 1;
+  }
+  
+  /* Scrollbar Hide */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
