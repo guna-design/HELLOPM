@@ -5,8 +5,8 @@ import obfuscator from 'vite-plugin-obfuscator';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(),
-    obfuscator({ /* options here */})
+    obfuscator()
   ], build: {
-    sourcemap: false  // Disable source maps for production
+    sourcemap: false  
   }
 })
