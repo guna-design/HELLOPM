@@ -25,22 +25,46 @@ import Navbar from "./Navbar/Navbar";
 
 function App() {
   useEffect(() => {
-    // Disable console functions
-    console.log = () => {};
-    console.warn = () => {};
-    console.error = () => {};
+    // Function to disable right-click
+    const handleContextMenu = (e) => e.preventDefault();
 
-    return () => {
-      // Restore console functions if needed
+    // Function to disable specific keyboard shortcuts
+    const handleKeyDown = (e) => {
+      if (e.ctrlKey && (e.key === 'u' || e.key === 'I')) e.preventDefault();
+    };
+
+    // Disable console functions
+    const disableConsole = () => {
+      console.log = () => {};
+      console.warn = () => {};
+      console.error = () => {};
+    };
+
+    // Enable console functions (optional)
+    const restoreConsole = () => {
       console.log = console.__proto__.log;
       console.warn = console.__proto__.warn;
       console.error = console.__proto__.error;
+    };
+
+    // Add event listeners for disabling context menu and keyboard shortcuts
+    document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Disable console functions on mount
+    disableConsole();
+
+    // Clean up event listeners and optionally restore console functions on unmount
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('keydown', handleKeyDown);
+      restoreConsole();
     };
   }, []);
 
   return (
     <div className="App">
-      <>
+    
      <Navbar />
     <Dashboard/>
      
@@ -58,7 +82,7 @@ function App() {
       <FAQ />
      
       <Footer />
-    </>
+ 
     </div>
   );
 }
