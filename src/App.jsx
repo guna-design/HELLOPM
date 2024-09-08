@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+
 import "./App.css";
 import Application from "./assets/Application/Application ";
 import BenefitsTabs from "./assets/ChooseHello/BenifitsData";
@@ -22,8 +24,23 @@ import InquiryBot from "./inquiry/inquiry";
 import Navbar from "./Navbar/Navbar";
 
 function App() {
+  useEffect(() => {
+    // Disable console functions
+    console.log = () => {};
+    console.warn = () => {};
+    console.error = () => {};
+
+    return () => {
+      // Restore console functions if needed
+      console.log = console.__proto__.log;
+      console.warn = console.__proto__.warn;
+      console.error = console.__proto__.error;
+    };
+  }, []);
+
   return (
-    <>
+    <div className="App">
+      <>
      <Navbar />
     <Dashboard/>
      
@@ -42,6 +59,7 @@ function App() {
      
       <Footer />
     </>
+    </div>
   );
 }
 
