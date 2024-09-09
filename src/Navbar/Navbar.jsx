@@ -27,7 +27,7 @@ const Navbar = () => {
             <a href="#" className="-m-1.5 p-1.5">
               <img
                 className="h-8 w-auto"
-                src=""
+                src="https://hellopm.co/wp-content/uploads/2023/04/hellopm_white_logo.png"
                 alt="Your Company"
               />
             </a>
